@@ -1,0 +1,6 @@
+ 
+ Comando para crear proyecto:
+ npx degit reduxjs/redux-templates/packages/vite-template-redux ultimate-react-three-espinaco-2
+
+ comando sacado de:
+ http://redux.js.org/introduction/installation
