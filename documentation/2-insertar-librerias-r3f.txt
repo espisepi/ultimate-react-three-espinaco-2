@@ -1,0 +1,7 @@
+0 - Instalar dependencias r3f:
+-- npm install three @types/three @react-three/fiber
+-- npm install @react-three/drei 
+
+1 - Crear carpeta r3f, r3f/renderer
+y crear Canvas r3f Component dentro de Renderer
+

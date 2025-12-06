@@ -1,10 +1,13 @@
+import { Box, OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 import { JSX } from "react";
 
 
 export const Renderer = (): JSX.Element | null => {
     return (
-        <div>
-            <h1>Hola</h1>
-        </div>
+        <Canvas>
+            <Box material-color="#f00000" />
+            <OrbitControls />
+        </Canvas>
     )
 }
