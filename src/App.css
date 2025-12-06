@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+
+  background-color: #2d2d2d;
+  color: #f0f0f0
 }
 
 .App-logo {
@@ -30,9 +33,11 @@
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(10px);
   }
+
   100% {
     transform: translateY(0px);
   }
