@@ -242,7 +242,7 @@ export default class RollercoasterClass {
     this.scene = scene;
 
     // init sound
-    this.initSound();
+    // this.initSound();
 
   }
 
