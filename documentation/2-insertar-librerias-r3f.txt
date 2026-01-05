@@ -5,3 +5,7 @@
 1 - Crear carpeta r3f, r3f/renderer
 y crear Canvas r3f Component dentro de Renderer
 
+
+https://github.com/FarazzShaikh/THREE-CustomShaderMaterial?tab=readme-ov-file
+
+https://github.com/DustinBrett/daedalOS/blob/main/contexts/fileSystem/core.ts
