@@ -8,6 +8,8 @@ import {
 } from "three/addons/misc/RollerCoaster.js";
 import { disposeAll } from "../../utils/disposeAll";
 
+import {curveConstructor} from "./core/curve";
+
 export default class RollercoasterClass {
   constructor({ scene, camera, videoTexture, isWireframe = false, isColor = false, urlSound = 'videos/jaguar.mp4', volume = 0.0, circuit = 0, isVisibleTube = false }) {
 
@@ -28,45 +30,8 @@ export default class RollercoasterClass {
     const SIZE_ROLLERCOASTER = 5;
     const SIZE_FUNCHAIRS = 2;
 
-    const curve = (function () {
-      const vector = new THREE.Vector3();
-      const vector2 = new THREE.Vector3();
-
-      return {
-        getPointAt: function (t) {
-          t = t * PI2;
-
-          let x,y,z;
-
-          // Circuito 1
-          if(circuit === 0) {
-            x = Math.sin(t * 3) * Math.cos(t * 4) * 50;
-            y = Math.sin(t * 10) * 2 + Math.cos(t * 17) * 2 + 5;
-            z = Math.sin(t) * Math.sin(t * 4) * 50;
-          }
-
-          // Circuito 2
-          if(circuit === 1) {
-            x = Math.sin(t * 6) * Math.cos(t * 3) * 70;
-            y = Math.sin(t * 10) * 30 + Math.cos(t * 15) * 10 + 20;
-            z = Math.sin(t * 8) * Math.cos(t * 4) * 60;
-          }
-
-          return vector.set(x, y, z).multiplyScalar(SIZE_ROLLERCOASTER);
-        },
-
-        getTangentAt: function (t) {
-          const delta = 0.0001;
-          const t1 = Math.max(0, t - delta);
-          const t2 = Math.min(1, t + delta);
-
-          return vector2
-            .copy(this.getPointAt(t2))
-            .sub(this.getPointAt(t1))
-            .normalize();
-        },
-      };
-    })();
+    const curve = curveConstructor();
+   
 
     geometry = new RollerCoasterGeometry(curve, 1500);
     material = new THREE.MeshPhongMaterial({
